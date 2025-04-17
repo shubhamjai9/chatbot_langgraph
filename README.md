@@ -39,7 +39,7 @@ This document outlines a **LangGraph**-orchestrated RAG chatbot for HDFC Bank, f
 
 #### B. ***Workflow Diagram*** 
 
-![](Flow Diagram.png)
+![Flow Diagram](https://github.com/shubhamjai9/chatbot_langgraph/blob/33ef26b5ff712077e200acfd0e1d6cbfcbb866db/Flow%20Diagram.png)
 
 ### 4. **Knowledge Graph Design** 
 #### A. ***Graph Schema*** 
