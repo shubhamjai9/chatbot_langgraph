@@ -32,11 +32,14 @@ This document outlines a **LangGraph**-orchestrated RAG chatbot for HDFC Bank, f
 |**Router Agent** |Classifies query intent  |
 |**Retriever Agent** |Fetches chunks from ChromaDB using hybrid search. |
 |**Knowledge Graph Agent** |Queries Neo4j for multi-hop relationships. |
-|**Synthesizer Agent** |Generates responses using LLM. |
+|**Search Agent** |Online Search Tool |
+|**External Tools Agent** |Handle queries of external APIs like weather, mail, whatsapp |
+|**Conversational Agent** |Generates responses using LLM. |
+|**Guardrail Agent** |Check and remove sensitive content. |
 
 #### B. ***Workflow Diagram*** 
 
-![](Aspose.Words.80fca639-3e58-4386-b03e-ad9d72845026.001.jpeg)
+![](Flow Diagram.png)
 
 ### 4. **Knowledge Graph Design** 
 #### A. ***Graph Schema*** 
@@ -73,7 +76,7 @@ MATCH (l:Loan {type: "Home Loan"})-[r:REQUIRES]->(d:Document)   RETURN d.name;
 
 a.  Fetches linked nodes: Personal Loan → Interest Rate → 10.5%. 
 
-4. **Synthesizer Agent**: Generates: *"As of May 2024, the interest rate for a ₹20L personal loan is 10.5%."* 
+4. **Conversational Agent**: Generates: *"As of May 2024, the interest rate for a ₹20L personal loan is 10.5%."* 
 
 *Architecture:* 
 
