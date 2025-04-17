@@ -100,13 +100,13 @@ def url_data_updation(urls: list[str], product: str, vector_store):
                 if raw_data["status"] == False:
                     return raw_data
             text = get_processed_text(raw_data, url)
-            if os.getenv("MODEL") == "ColBERT":
-                save_to_ragatouille(
-                    text, {"product": product, "url": url}, vector_store
-                )
-            else:
-                documents = split_text(text)
-                save_to_chroma(documents, product, url, vector_store)
+            # if os.getenv("MODEL") == "ColBERT":
+            #     save_to_ragatouille(
+            #         text, {"product": product, "url": url}, vector_store
+            #     )
+            # else:
+            documents = split_text(text)
+            save_to_chroma(documents, product, url, vector_store)
             success_url.append(url)
         except Exception as e:
             print("Error at url extraction", e)
